@@ -1,8 +1,19 @@
 # Changelog
 
-All notable changes to the SpecKit Test Validate extension are documented here.
+All notable changes to the SpecKit Test-By extension are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+---
+
+## [1.2.0] — 2026-09-23
+
+### Changed
+
+- Extension ID renamed from `test` to `test-by`; extension name updated to "Test-By"
+- Commands renamed: `speckit.test.validate` → `speckit.test-by.validate`, `speckit.test.e2e` → `speckit.test-by.e2e`
+- Slash commands updated accordingly: `/speckit-test-validate` → `/speckit-test-by-validate`, `/speckit-test-e2e` → `/speckit-test-by-e2e`
+- Command files moved from `commands/speckit.test.validate.md` / `commands/speckit.test.e2e.md` to `commands/validate.md` / `commands/e2e.md`
 
 ---
 

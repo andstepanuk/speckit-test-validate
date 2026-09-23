@@ -15,12 +15,12 @@ $ARGUMENTS
 `$ARGUMENTS` must contain the path to the CSV file (absolute or relative to the project root). Example:
 
 ```
-/speckit-test-e2e tests/login-flow.csv
+__SPECKIT_COMMAND_TEST_E2E__ tests/login-flow.csv
 ```
 
 If `$ARGUMENTS` is empty, look for a CSV file in the active feature directory at `<feature_directory>/test-cases/e2e.csv`. If that also does not exist, print an error and stop:
 
-> **Error**: No CSV file specified. Usage: `/speckit-test-e2e <path-to-csv>` or place a file at `<feature_directory>/test-cases/e2e.csv`.
+> **Error**: No CSV file specified. Usage: `__SPECKIT_COMMAND_TEST_E2E__ <path-to-csv>` or place a file at `<feature_directory>/test-cases/e2e.csv`.
 
 ## CSV Format
 
@@ -300,7 +300,7 @@ After all test cases complete, write `REPORT_FILE` using exactly this structure:
 ## How to Re-run
 
 ```
-/speckit-test-e2e <CSV_FILE>
+__SPECKIT_COMMAND_TEST_E2E__ <CSV_FILE>
 ```
 ```
 

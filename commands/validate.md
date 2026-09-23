@@ -37,11 +37,11 @@ If the Playwright MCP server is unavailable, print a clear error and stop:
 
 1. Read `.specify/feature.json` and extract `feature_directory` (e.g. `specs/003-user-auth`).
 2. If the file does not exist or `feature_directory` is empty: print an error and stop.
-   > **Error**: No active feature. Run `/speckit-specify` first or check `.specify/feature.json`.
+   > **Error**: No active feature. Run `__SPECKIT_COMMAND_SPECIFY__` first or check `.specify/feature.json`.
 3. Set `FEATURE_DIR` to the resolved feature directory path.
 4. Set `SPEC_FILE` to `<FEATURE_DIR>/spec.md`.
 5. If `SPEC_FILE` does not exist: print an error and stop.
-   > **Error**: `<SPEC_FILE>` not found. Run `/speckit-specify` to generate the specification.
+   > **Error**: `<SPEC_FILE>` not found. Run `__SPECKIT_COMMAND_SPECIFY__` to generate the specification.
 
 ## Step 2 — Load Configuration
 
@@ -235,12 +235,12 @@ After all scenarios complete, write `REPORT_FILE` with this structure:
 ## How to Re-run
 
 ```
-/speckit-test-validate
+__SPECKIT_COMMAND_TEST_VALIDATE__
 ```
 
 To run against a different environment:
 ```
-/speckit-test-validate https://staging.example.com
+__SPECKIT_COMMAND_TEST_VALIDATE__ https://staging.example.com
 ```
 ```
 
@@ -262,7 +262,7 @@ Call `mcp__playwright__browser_close` to release the Playwright browser session.
 ## Graceful Degradation
 
 - Playwright MCP unavailable → error with setup instructions, no report written
-- `.specify/feature.json` missing → error with instructions to run `/speckit-specify`
+- `.specify/feature.json` missing → error with instructions to run `__SPECKIT_COMMAND_SPECIFY__`
 - `spec.md` has no acceptance scenarios → warning, no report written
 - Individual step fails → screenshot + FAIL in report; continue to next scenario
 - Screenshot capture itself fails → log "screenshot unavailable" in report; do not block

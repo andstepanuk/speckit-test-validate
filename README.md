@@ -1,4 +1,4 @@
-# SpecKit Test Validate Extension
+# SpecKit Test-By Extension
 
 A [SpecKit](https://github.com/github/spec-kit) extension that validates feature acceptance scenarios against a live application using Playwright browser automation.
 
@@ -38,21 +38,32 @@ Configure the Playwright MCP server in `.claude.json` (or your MCP config file):
 
 ## Installation
 
-Copy the extension files into your SpecKit project
+Copy the extension files into your SpecKit project, or
 
+specify extension add test-by --from https://github.com/andstepanuk/speckit-test-validate/archive/refs/tags/v1.2.0.zip
 
 ---
 
 ## Usage
 
-**Claude Code:**
+**Validate acceptance scenarios from `spec.md`:**
 ```
-/speckit-test-validate
+/speckit-test-by-validate
 ```
 
 **With a base URL override:**
 ```
-/speckit-test-validate https://staging.example.com
+/speckit-test-by-validate https://staging.example.com
+```
+
+**Run CSV-driven E2E tests:**
+```
+/speckit-test-by-e2e
+```
+
+**With an explicit CSV path:**
+```
+/speckit-test-by-e2e tests/login-flow.csv
 ```
 
 
@@ -157,7 +168,7 @@ Key rules:
 Add `@playwright/mcp` to your `.claude.json` MCP servers config (see Prerequisites).
 
 **"No active feature"**
-Run `/speckit-specify <description>` first to create a feature and `spec.md`.
+Run `/speckit-specify <description>` first to create a feature and `spec.md`. Then run `/speckit-test-by-validate`.
 
 **"No acceptance scenarios found"**
 Ensure your `spec.md` has `**Acceptance Scenarios**:` sections with numbered Given/When/Then items.

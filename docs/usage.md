@@ -28,19 +28,19 @@ Playwright MCP server must be configured in your Claude Code settings (`.claude.
 
 | File | Used by |
 |------|---------|
-| `examples/todo-app/spec.md` | `/speckit-test-validate` |
-| `examples/todo-app/test-cases/e2e.csv` | `/speckit-test-e2e` |
+| `examples/todo-app/spec.md` | `/speckit-test-by-validate` |
+| `examples/todo-app/test-cases/e2e.csv` | `/speckit-test-by-e2e` |
 
 ---
 
-## Running `/speckit-test-validate`
+## Running `/speckit-test-by-validate`
 
 This command reads `spec.md`, parses the Given/When/Then acceptance scenarios, and drives Playwright to verify each one.
 
 The `.specify/feature.json` in this repo already points at `examples/todo-app`, so no setup is needed — just run:
 
 ```
-/speckit-test-validate
+/speckit-test-by-validate
 ```
 
 **What it tests** (4 user stories, 7 scenarios):
@@ -55,17 +55,17 @@ The `.specify/feature.json` in this repo already points at `examples/todo-app`, 
 To run against a different environment:
 
 ```
-/speckit-test-validate https://your-staging-url.example.com
+/speckit-test-by-validate https://your-staging-url.example.com
 ```
 
 ---
 
-## Running `/speckit-test-e2e`
+## Running `/speckit-test-by-e2e`
 
 This command reads a CSV file and executes each row as a browser automation step.
 
 ```
-/speckit-test-e2e examples/todo-app/test-cases/e2e.csv
+/speckit-test-by-e2e examples/todo-app/test-cases/e2e.csv
 ```
 
 **Test cases in the CSV** (7 test cases, ~50 steps):
