@@ -201,7 +201,7 @@ Either add a URL to the `Given` clause (`Given the user is on https://...`) or s
 
 ## Contributing
 
-Issues and pull requests welcome at [github.com/your-org/speckit-test-validate](https://github.com/your-org/speckit-test-validate).
+Issues and pull requests welcome at [github.com/andstepanuk/speckit-test-validate](https://github.com/andstepanuk/speckit-test-validate).
 
 ---
 

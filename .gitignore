@@ -1,6 +1,7 @@
 # Test report artifacts — generated at runtime, do not commit
 **/test-reports/screenshots/*.png
 **/test-reports/validation-*.md
+**/test-reports/e2e-*.md
 
 # macOS
 .DS_Store
@@ -17,3 +18,5 @@ desktop.ini
 
 # Node (if any tooling is added)
 node_modules/
+
+.playwright-mcp/
