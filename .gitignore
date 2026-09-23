@@ -1,0 +1,19 @@
+# Test report artifacts — generated at runtime, do not commit
+**/test-reports/screenshots/*.png
+**/test-reports/validation-*.md
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (if any tooling is added)
+node_modules/

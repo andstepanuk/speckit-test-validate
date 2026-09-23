@@ -1,0 +1,40 @@
+schema_version: "1.0"
+
+extension:
+  id: speckit-test-validate
+  name: "Test Validation"
+  version: "1.1.0"
+  description: "Validate acceptance scenarios and run CSV-driven E2E tests against a live app via Playwright"
+  author: community
+  repository: https://github.com/your-org/speckit-test-validate
+  license: MIT
+
+requires:
+  speckit_version: ">=0.2.0"
+  tools:
+    - name: playwright
+      required: true
+      description: "Playwright MCP server (@playwright/mcp) must be configured for browser automation"
+
+provides:
+  commands:
+    - name: speckit.test.validate
+      file: commands/speckit.test.validate.md
+      description: "Execute acceptance scenarios from spec.md step-by-step via Playwright and produce a validation report"
+    - name: speckit.test.e2e
+      file: commands/speckit.test.e2e.md
+      description: "Load test cases from a CSV file and execute each step via Playwright, producing a structured validation report"
+
+  config:
+    - name: "test-config.yml"
+      template: "test-config.yml"
+      description: "Test validation configuration (timeouts, screenshot settings, base URL)"
+      required: false
+
+tags:
+  - "testing"
+  - "playwright"
+  - "validation"
+  - "acceptance"
+  - "e2e"
+  - "csv"
