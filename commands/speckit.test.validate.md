@@ -12,7 +12,7 @@ Execute every acceptance scenario defined in the current feature's `spec.md` aga
 $ARGUMENTS
 ```
 
-If `$ARGUMENTS` contains a URL, treat it as the `base_url` override for this run, regardless of `test-config.yml`.
+If `$ARGUMENTS` contains a URL, treat it as the `base_url` override for this run, regardless of `config-template.yml`.
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ If the Playwright MCP server is unavailable, print a clear error and stop:
 
 ## Step 2 — Load Configuration
 
-1. Read `.specify/extensions/test/test-config.yml` if it exists. Use these defaults if absent:
+1. Read `.specify/extensions/test/config-template.yml` if it exists. Use these defaults if absent:
    - `screenshot_on_failure: true`
    - `screenshot_dir: test-reports/screenshots`
    - `report_dir: test-reports`
@@ -95,7 +95,7 @@ For each scenario in the list, execute the following loop. Keep a running result
 Determine the URL for this scenario:
 1. Use `scenario.url` if non-null.
 2. Otherwise use `base_url` from config.
-3. If both are null, mark the scenario SKIPPED with note "No URL provided — add a URL to the Given clause or set base_url in test-config.yml" and continue to the next scenario.
+3. If both are null, mark the scenario SKIPPED with note "No URL provided — add a URL to the Given clause or set base_url in config-template.yml" and continue to the next scenario.
 
 Call `mcp__playwright__browser_navigate` with the resolved URL.
 
@@ -266,5 +266,5 @@ Call `mcp__playwright__browser_close` to release the Playwright browser session.
 - `spec.md` has no acceptance scenarios → warning, no report written
 - Individual step fails → screenshot + FAIL in report; continue to next scenario
 - Screenshot capture itself fails → log "screenshot unavailable" in report; do not block
-- `test-config.yml` missing → use defaults silently
+- `config-template.yml` missing → use defaults silently
 - Output directories cannot be created → write report to feature directory root with warning

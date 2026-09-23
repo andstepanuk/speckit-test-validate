@@ -98,7 +98,7 @@ Unrecognised action values: log a warning in the report ("Unknown action: X — 
 
 ## Step 2 — Load Configuration
 
-Read `.specify/extensions/test/test-config.yml` if it exists. Use these defaults if absent:
+Read `.specify/extensions/test/config-template.yml` if it exists. Use these defaults if absent:
 
 - `screenshot_on_failure: true`
 - `screenshot_dir: test-reports/screenshots`
@@ -328,5 +328,5 @@ Call `mcp__playwright__browser_close` to release the Playwright browser session.
 - Invalid action value in a row → warning in report ("Unknown action: X — step skipped"), continue
 - Individual step fails → screenshot + FAIL recorded, continue to next step or next test case
 - Screenshot capture fails → note "screenshot unavailable", do not block execution
-- `test-config.yml` missing → use defaults silently
+- `config-template.yml` missing → use defaults silently
 - Output directories cannot be created → write report to CSV directory with warning

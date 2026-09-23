@@ -37,7 +37,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Structured markdown report written to `<feature-dir>/test-reports/validation-<timestamp>.md`
 - Observational notes: console errors, slow loads, unexpected redirects
 - Graceful degradation for missing Playwright MCP, missing spec, missing URL
-- `test-config.yml` configuration: timeouts, retry count, base URL, screenshot settings, browser viewport
+- `config-template.yml` configuration: timeouts, retry count, base URL, screenshot settings, browser viewport
 - Claude Code skill at `.claude/skills/speckit-test-validate/SKILL.md`
 - GitHub Copilot prompt at `.github/prompts/speckit.test.validate.prompt.md`
 - Base URL override via command argument: `/speckit-test-validate https://staging.example.com`

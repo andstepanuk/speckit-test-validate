@@ -38,37 +38,12 @@ Configure the Playwright MCP server in `.claude.json` (or your MCP config file):
 
 ## Installation
 
-Copy the extension files into your SpecKit project:
+Copy the extension files into your SpecKit project
 
-```bash
-# Clone or download this repository, then:
-cp -r .specify/extensions/test/  <your-project>/.specify/extensions/test/
-cp -r .claude/skills/speckit-test-validate/  <your-project>/.claude/skills/speckit-test-validate/
-
-# Optional — GitHub Copilot integration:
-cp -r .github/prompts/speckit.test.validate.prompt.md  <your-project>/.github/prompts/
-```
-
-No changes to `.specify/extensions.yml` are required unless you want to attach this command as an automatic hook (e.g., after `/speckit-implement`).
-
-### Optional Hook Registration
-
-To run validation automatically after implementation, add to `.specify/extensions.yml`:
-
-```yaml
-hooks:
-  after_implement:
-    command: speckit.test.validate
-    optional: true
-    prompt: "Run acceptance scenario validation via Playwright?"
-    description: "Validate spec scenarios against the implemented feature"
-```
 
 ---
 
 ## Usage
-
-With an active SpecKit feature (`.specify/feature.json` pointing to a feature directory with a `spec.md`):
 
 **Claude Code:**
 ```
@@ -80,16 +55,12 @@ With an active SpecKit feature (`.specify/feature.json` pointing to a feature di
 /speckit-test-validate https://staging.example.com
 ```
 
-**GitHub Copilot Chat** (after installing the `.github/prompts/` file):
-```
-@workspace /speckit-test-validate
-```
 
 ---
 
 ## Configuration
 
-Edit `.specify/extensions/test/test-config.yml` in your project:
+Edit `config-template.yml` in your project:
 
 ```yaml
 # Capture PNG screenshot on step/assertion failure
@@ -195,7 +166,7 @@ Ensure your `spec.md` has `**Acceptance Scenarios**:` sections with numbered Giv
 The `test-reports/screenshots/` directory is created automatically inside the feature directory. Check write permissions.
 
 **Scenarios are SKIPPED**
-Either add a URL to the `Given` clause (`Given the user is on https://...`) or set `base_url` in `test-config.yml`.
+Either add a URL to the `Given` clause (`Given the user is on https://...`) or set `base_url` in `config-template.yml`.
 
 ---
 

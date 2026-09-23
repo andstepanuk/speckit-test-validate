@@ -1,5 +1,5 @@
 # Test Validation Extension Configuration
-# Copy to .specify/extensions/test/test-config.yml in the target project.
+# Copy to .specify/extensions/test/config-template.yml in the target project.
 
 # ---------------------------------------------------------------------------
 # screenshot — controls when and where screenshots are captured
